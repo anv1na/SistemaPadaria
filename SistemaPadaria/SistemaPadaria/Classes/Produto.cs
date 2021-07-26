@@ -1,37 +1,47 @@
-﻿using System;
-
-public class Produto
+namespace SistemaPadaria.Dominio
 {
-    public Produto()
+    internal class Produto
     {
-        public int IdProduto;
-    public string NomeProduto;
-    public string MarcaProduto;
-    public bool Tipo; //Produtos para revenda || para utilização na fabricação 
-    public float Peso;
-    public decimal PreçoUnitario;
-    public string UnidadeMedida;
-    public DateTime Validade;
-}
+        public int Id { get; private set; }
+        public string Nome { get; set; }
+        public string Marca { get; set; }
+        public bool Tipo { get; set; }
+        public float Peso { get; set; }
+        public float PrecoUnitario { get; set; }
+        public string UnidadeMedida { get; set; }
+        public bool Ativo { get; set; }
+        /*
+        FK ReceitaId: int   
+        FK ItemReceitaId: int
+        */
+        public Produto(int id, string nome, string marca, bool tipo, float peso, float precoUnitario, string unidadeMedida)
+        {
+            Id = id;
+            Nome = nome;
+            Marca = marca;
+            Tipo = tipo;
+            Peso = peso;
+            PrecoUnitario = precoUnitario;
+            UnidadeMedida = unidadeMedida;
+        }
+        public void Inserir()
+        {
 
-    public void AdicionarProduto()
-{
+        }
+        public void AlterarStatus(bool ativo)
+        {
+            Ativo = ativo;
+        }
+        public void Consultar()
+        {
 
-}
+        }
+        public void CalcularPrecoVenda(float precoUnitario, int quantidade)
+        {
+            float precoTotal = quantidade * precoUnitario;
+        }
 
-    public void AlterarProduto()
-{
-
-}
-
-    public void ConsultarProduto()
-{
-
-}
-
-    public void InativarProduto()
-{
-        
+    }
 }
 
 }
