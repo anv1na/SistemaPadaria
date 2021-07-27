@@ -24,6 +24,23 @@ namespace SistemaPadaria
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddControllers();
+            services.AddScoped<IRepository, Repository>();
+
+            services.AddSwaggerGen(opt =>
+            {
+                opt.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "AgendaCompromissos.API", Version = "v1" });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                opt.IncludeXmlComments(xmlPath);
+            });
+            services.AddDbContext<DataContext>(
+                x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
+            );
+            services.AddControllers()
+                    .AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = 
+                        Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,6 +57,13 @@ namespace SistemaPadaria
                 app.UseHsts();
             }
 
+            app.UseSwagger();
+            app.UseSwaggerUI(opt =>
+            {
+                opt.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
+                opt.RoutePrefix = string.Empty;
+            });
+            
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
