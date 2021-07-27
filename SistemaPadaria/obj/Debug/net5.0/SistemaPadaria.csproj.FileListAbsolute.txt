@@ -1,0 +1,8 @@
+C:\Users\annav\Documents\TalentoTechBank\ProjetoFinal\SistemaPadaria\SistemaPadaria\obj\Debug\net5.0\SistemaPadaria.csproj.AssemblyReference.cache
+C:\Users\annav\Documents\TalentoTechBank\ProjetoFinal\SistemaPadaria\SistemaPadaria\obj\Debug\net5.0\SistemaPadaria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\annav\Documents\TalentoTechBank\ProjetoFinal\SistemaPadaria\SistemaPadaria\obj\Debug\net5.0\SistemaPadaria.AssemblyInfoInputs.cache
+C:\Users\annav\Documents\TalentoTechBank\ProjetoFinal\SistemaPadaria\SistemaPadaria\obj\Debug\net5.0\SistemaPadaria.AssemblyInfo.cs
+C:\Users\annav\Documents\TalentoTechBank\ProjetoFinal\SistemaPadaria\SistemaPadaria\obj\Debug\net5.0\SistemaPadaria.csproj.CoreCompileInputs.cache
+C:\Users\annav\Documents\TalentoTechBank\ProjetoFinal\SistemaPadaria\SistemaPadaria\obj\Debug\net5.0\SistemaPadaria.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\annav\Documents\TalentoTechBank\ProjetoFinal\SistemaPadaria\SistemaPadaria\obj\Debug\net5.0\SistemaPadaria.RazorAssemblyInfo.cache
+C:\Users\annav\Documents\TalentoTechBank\ProjetoFinal\SistemaPadaria\SistemaPadaria\obj\Debug\net5.0\SistemaPadaria.RazorAssemblyInfo.cs
