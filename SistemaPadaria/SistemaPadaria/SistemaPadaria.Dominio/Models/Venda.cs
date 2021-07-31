@@ -13,9 +13,18 @@ namespace SistemaPadaria.Dominio.Models
         public void Cadastrar (int id, decimal valorTotal, SmallDateTime data)
         {
             this.Id = id;
-            this.ValorTotal = valorTotal;
-            this.Data = data;
+            this.ValorTotal = 0;
+            var dataAgora = DateTime.Now;
+            this.Data = dataAgora;
 
+        }
+
+        public void AdicionarTotal(decimal valor)
+        {
+            if (valor > 0)
+            {
+                ValorTotal += valor;
+            }
         }
     }
 }

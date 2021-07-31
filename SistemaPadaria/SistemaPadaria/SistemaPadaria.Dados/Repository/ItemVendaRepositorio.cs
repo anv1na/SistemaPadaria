@@ -11,10 +11,10 @@ namespace SistemaPadaria.Dados.Repositorio
 {
     public class ItemVendaRepositorio : BaseRepositorio<ItemVenda>
     {
-         public bool Incluir(int Id, decimal PrecoVenda, float Quantidade, int IdVenda, int IdProduto)
+         public bool Incluir( decimal PrecoVenda, float Quantidade, Produto produto, Venda venda)
         {
-            var venda = new Venda();
-            venda.Cadastrar(Id, PrecoVenda, Quantidade, IdVenda, IdProduto);
+            var itemvenda = new ItemVenda();
+            itemvenda.Cadastrar(PrecoVenda, Quantidade, venda, produto);
 
             if (Existe(ItemVenda))
             {
