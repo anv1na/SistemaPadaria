@@ -72,15 +72,5 @@ namespace SistemaPadaria.Dados.Repositorio
 
         }
 
-
-        private void RetiraDoProduto(bool IncluirProduto = true)
-        {
-            var ItemReceita = SelecionarPorIdReceita(id);
-            foreach (var x in lista)
-            {
-                var n = new IngredienteEstoqueRepositorio();
-                n.MandarParaCozinha(x.IdIngrediente, (x.QtdIngrediente * solicitacao.QuantidadeProduzida));
-            }
-        }
     }
 }
