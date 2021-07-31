@@ -4,4 +4,13 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SistemaPadaria.Dados\SistemaPadaria.Dados.csproj" />
+    <ProjectReference Include="..\SistemaPadaria.Dominio\SistemaPadaria.Dominio.csproj" />
+  </ItemGroup>
+
 </Project>
