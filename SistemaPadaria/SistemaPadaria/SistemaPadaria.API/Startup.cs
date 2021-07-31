@@ -29,7 +29,7 @@ namespace SistemaPadaria
 
             services.AddSwaggerGen(opt =>
             {
-                opt.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "AgendaCompromissos.API", Version = "v1" });
+                opt.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "SistemaPadaria.API", Version = "v1" });
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 opt.IncludeXmlComments(xmlPath);
