@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BFGicOKiWogpQohgIxPNQPtp/QVpXF1tRgvt0iXSs17hkvsolmfomngErpsyOrEclBxtxiUDwYKKa1b2kb2ZMA==",
+  "dgSpecHash": "JEy6ecCJTws52pIs1NJqG2VvKJ/mm95W2nLOzT4k7xhc8e6VA/qp8UG3bmHc1cq703F12tPWtp5pt16ewys+YA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Barbara\\Source\\Repos\\SistemaPadaria\\SistemaPadaria\\SistemaPadaria\\SistemaPadaria.csproj",
+  "projectFilePath": "C:\\Users\\Barbara\\source\\repos\\SistemaPadaria\\SistemaPadaria\\SistemaPadaria\\SistemaPadaria.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Barbara\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Barbara\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.8\\microsoft.aspnetcore.jsonpatch.5.0.8.nupkg.sha512",
