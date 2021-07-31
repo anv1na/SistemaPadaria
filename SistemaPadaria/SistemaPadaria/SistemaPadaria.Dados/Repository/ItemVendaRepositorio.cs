@@ -14,7 +14,7 @@ namespace SistemaPadaria.Dados.Repositorio
          public bool Incluir( decimal PrecoVenda, float Quantidade, Produto produto, Venda venda)
         {
             var itemvenda = new ItemVenda();
-            itemvenda.Cadastrar(PrecoVenda, Quantidade, venda, produto);
+            itemvenda.Cadastrar(PrecoVenda, Quantidade, produto, venda);
 
             if (Existe(ItemVenda))
             {
@@ -22,16 +22,33 @@ namespace SistemaPadaria.Dados.Repositorio
             }
 
             return base.Incluir(ItemVenda);
+            ProdutoVendido(itemVenda.Produto, itemVenda.Quantidade);
+            AdicionandoNoTotal(itemVenda.ValorUnitario, itemVenda.Quantidade, itemVenda);
+            return true;
         }      
 
         public override List< ItemVenda> SelecionarTudo()
         {
-            return base.SelecionarTudo().OrderBy(x => x. ItemVenda).ToList();
+            return base.SelecionarTudo().OrderBy(x => x. Produto.Nome).ToList();
         }
 
         public Produto SelecionarPorId(int Id)
         {
             return contexto. ItemVenda.FirstOrDefault(x => x.Id == id);
+        }
+
+        public bool ProdutoVendido(Produto produto, decimal quantidade)
+        {
+            var produtoNaLoja = new LojaRepositorio();
+            produtoNaLoja.ProdutoVendido(produto, quantidade);
+            return true;
+        }
+        
+        public bool AdicionandoNoTotal(decimal valor, decimal quantidade, ItemVenda itemVenda)
+        {
+            var total = valor * quantidade;
+            itemVenda.Venda.AdicionarTotal(total);
+            return true;
         }
 
         public bool AtualizarItemVenda(int Id, decimal PrecoVenda, float Quantidade, int IdVenda, int IdProduto)
