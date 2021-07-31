@@ -27,9 +27,15 @@ namespace SistemaPadaria.API.Controllers
         public void Post([FromBody] ReceitaDTO dto)
         {
             var receita = new Receita();
-            eceita.Cadastrar(dto.nome, dto.rendimento, dto.Produto);
+            receita.Cadastrar(dto.nome, dto.rendimento, dto.Produto);
 
             _repo.Incluir(receita);
+        }
+
+         [HttpPost]
+        public void Post(bool IncluirProduto)
+        {
+            var incluir = true;
         }
 
          [HttpPut("{id}")]

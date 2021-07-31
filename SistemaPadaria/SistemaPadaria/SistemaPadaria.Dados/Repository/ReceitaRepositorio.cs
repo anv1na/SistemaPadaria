@@ -56,5 +56,31 @@ namespace SistemaPadaria.Dados.Repositorio
         {
             return base.SelecionarTudo().OrderBy(x => x.Nome).ToList();
         }
+
+        public bool IncluirProduto(string nome, int rendimento, bool incluir, Produto produto)
+        {
+            var receita = SelecionarPorId(id);
+
+            if (!Existe(receita) && incluir(false))
+            {
+                return false;
+            }
+            
+            receita.quantidade += produto.peso;
+            ItemReceita = new List<ItemReceita>(id);
+            produto.peso -= ItemReceita.quantidade;
+
+        }
+
+
+        private void RetiraDoProduto(bool IncluirProduto = true)
+        {
+            var ItemReceita = SelecionarPorIdReceita(id);
+            foreach (var x in lista)
+            {
+                var n = new IngredienteEstoqueRepositorio();
+                n.MandarParaCozinha(x.IdIngrediente, (x.QtdIngrediente * solicitacao.QuantidadeProduzida));
+            }
+        }
     }
 }

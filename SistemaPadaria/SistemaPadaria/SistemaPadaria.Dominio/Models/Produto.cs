@@ -33,10 +33,7 @@ namespace SistemaPadaria.Models
             PrecoUnitario = (precoUnitario <= 0) ? PrecoUnitario : precoUnitario;
         }
 
-        public void Excluir()
-        {
-
-        }
+    
 
         //Quando o produto está sem estoque
         public void AlterarStatus(bool ativo)
