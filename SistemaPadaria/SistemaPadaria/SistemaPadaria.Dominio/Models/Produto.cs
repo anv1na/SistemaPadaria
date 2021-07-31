@@ -1,47 +1,50 @@
+using System.Collections.Generic;
+
 namespace SistemaPadaria.Models
 {
     public class Produto
     {
-        public Produto(int id, string nome, string marca, float peso, float precoUnitario, string unidadeMedida, bool ativo, ItemVenda itemVenda, Estoque estoque, ItemReceita itemReceita, Receita receita)
-        {
-            this.Id = id;
-            this.Nome = nome;
-            this.Marca = marca;
-            this.Peso = peso;
-            this.PrecoUnitario = precoUnitario;
-            this.UnidadeMedida = unidadeMedida;
-            this.Ativo = ativo;
-            this.itemVenda = itemVenda;
-            this.Estoque = estoque;
-            this.itemReceita = itemReceita;
-            this.Receita = receita;
-
-        }
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Nome { get; set; }
         public string Marca { get; set; }
-        public float Peso { get; set; }
-        public float PrecoUnitario { get; set; }
+        public decimal Peso { get; set; }
+        public decimal PrecoUnitario { get; set; }
         public string UnidadeMedida { get; set; }
         public bool Ativo { get; set; }
-        public ItemVenda itemVenda { get; set; }
-        public Estoque Estoque { get; set; }
-        public ItemReceita itemReceita { get; set; }
         public Receita Receita { get; set; }
+        public ItemReceita itemReceita { get; set; }
+        public ItemVenda itemVenda { get; set; }
+        public Estoque estoque { get; set; }
+        public List<ItemVenda> ItemVendas { get; set; }
 
+        public void Cadastrar(string nome, string marca, decimal precoUnitario, string unidadeMedida, decimal peso)
+        {
+            Nome = nome;
+            Marca = marca;
+            PrecoUnitario = precoUnitario;
+            UnidadeMedida = unidadeMedida;
+            Peso = peso;
+        }
 
-        public void Inserir()
+        public void Alterar(string nome, decimal peso, decimal precoUnitario)
+        {
+            Nome = string.IsNullOrEmpty(nome.Trim()) ? Nome : nome;
+            Peso = (peso <= 0) ? Peso : peso;
+            PrecoUnitario = (precoUnitario <= 0) ? PrecoUnitario : precoUnitario;
+        }
+
+        public void Excluir()
         {
 
         }
+
+        //Quando o produto está sem estoque
         public void AlterarStatus(bool ativo)
         {
             Ativo = ativo;
         }
-        public void Consultar()
-        {
 
-        }
+
         public void CalcularPrecoVenda(float precoUnitario, int quantidade)
         {
             float precoTotal = quantidade * precoUnitario;

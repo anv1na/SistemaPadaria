@@ -13,7 +13,7 @@ namespace SistemaPadaria.Dados
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=ACNTB3RKLD53; Database=SistemaPadaria; Trusted_Connection=True");
+            optionsBuilder.UseSqlServer("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=SistemaPadaria;Data Source=DESKTOP-1T3CPHE");
             base.OnConfiguring(optionsBuilder);
         }
 
